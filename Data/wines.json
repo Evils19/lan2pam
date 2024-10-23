@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Ocone Bozzovich Beneventano Bianco IGT",
+    "type": "Red wine",
+    "country": "France",
+    "photo": "img/Rectangle 9.png",
+    "available": true,
+    "price": 23256596,
+    "stock": 123,
+    "criticScore": 94
+  },
+  {
+    "name": "2021 Petit Chablis - Passy Le Clou",
+    "type": "White wine",
+    "country": "France",
+    "photo": "img/Rectangle 9 (1).png",
+    "available": true,
+    "price": 23256596,
+    "stock": 123,
+    "criticScore": 94
+  },
+  {
+    "name": "Philippe Fontaine Champagne Brut Rosé",
+    "type": "Sparkling wine",
+    "country": "France",
+    "photo": "img/Rectangle 9 (2).png",
+    "available": false,
+    "price": 23256596,
+    "stock": 0,
+    "criticScore": 94
+  },
+  {
+    "name": "2021 Cicada’s Song Rosé",
+    "type": "Rose wine",
+    "country": "France",
+    "photo": "img/Rectangle 9 (3).png",
+    "available": true,
+    "price": 23256596,
+    "stock": 123,
+    "criticScore": 94
+  },
+  {
+    "name": "Château Margaux",
+    "type": "Red wine",
+    "country": "France",
+    "photo": "https://enotecaproperzio.gumlet.io/media/catalog/product/cache/1/image/400x600/9df78eab33525d08d6e5fb8d27136e95/i/m/a3bcc1630d43aafe174edc6ff7152f8c/chateau-margaux-2016-0-75-lt.png",
+    "available": true,
+    "price": 3000000,
+    "stock": 50,
+    "criticScore": 98
+  },
+  {
+    "name": "Sassicaia",
+    "type": "Red wine",
+    "country": "Italy",
+    "photo": "https://img.imageboss.me/reservecellar/cover:inside/720x720/quality:80,format:webp/products/2014-tenuta-san-guido-bolgheri-sassicaia-doc.png",
+    "available": true,
+    "price": 4500000,
+    "stock": 30,
+    "criticScore": 97
+  },
+  {
+    "name": "Veuve Clicquot Ponsardin",
+    "type": "Sparkling wine",
+    "country": "France",
+    "photo": "https://vintagemattituck.com/cdn/shop/products/image_965578_full_grande_19245f8e-0c8e-43ec-991e-f7be4eec792f_grande.jpg?v=1490456830",
+    "available": true,
+    "price": 2000000,
+    "stock": 75,
+    "criticScore": 95
+  },
+  {
+    "name": "Dom Pérignon",
+    "type": "Sparkling wine",
+    "country": "France",
+    "photo": "https://www.obrienswine.ie/cdn/shop/files/sparkling-dom-perignon-51229560209742.png?v=1728172167",
+    "available": true,
+    "price": 3500000,
+    "stock": 20,
+    "criticScore": 99
+  },
+  {
+    "name": "Masi Costasera Amarone",
+    "type": "Red wine",
+    "country": "Italy",
+    "photo": "https://www.aduv.co.uk/cdn/shop/products/ok_MASICostaseraAmaronedellaValpolicella.jpg?v=1644908197",
+    "available": false,
+    "price": 1500000,
+    "stock": 0,
+    "criticScore": 92
+  },
+  {
+    "name": "Casanova di Neri Tenuta Nuova",
+    "type": "Red wine",
+    "country": "Italy",
+    "photo": "https://static.millesima.com/s3/attachements/h531px/J481_2013NM_c.png",
+    "available": true,
+    "price": 2500000,
+    "stock": 60,
+    "criticScore": 96
+  }
+]
