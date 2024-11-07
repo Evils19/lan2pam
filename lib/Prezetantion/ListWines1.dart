@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Wine {
-  final String type;  // Tipul vinului
-  final String photo; // URL-ul sau calea către imaginea vinului
-  final int stock;    // Stocul
+import '../Data/Wines2.dart';
 
-  Wine({required this.type, required this.photo, required this.stock});
-}
+
 
 class HorizontalWineList extends StatelessWidget {
-  final List<Wine> wines = [
-    Wine(type: 'Red wines', photo: 'img/img_1.png', stock: 123),
-    Wine(type: 'White wines', photo: 'img/img.png', stock: 123),
-    Wine(type: 'Red wines', photo: 'img/img_1.png', stock: 123),
-    Wine(type: 'White wines', photo: 'img/img.png', stock: 123),
+  final List<Wine2> wines = [
+    Wine2(type: 'Red wines', photo: 'img/img_1.png', stock: 123),
+    Wine2(type: 'White wines', photo: 'img/img.png', stock: 123),
+    Wine2(type: 'Red wines', photo: 'img/img_1.png', stock: 123),
+    Wine2(type: 'White wines', photo: 'img/img.png', stock: 123),
 
   ];
 

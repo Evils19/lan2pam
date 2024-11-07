@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lan2pam/Widget/Search.dart';
-import 'package:lan2pam/Widget/WidgetLab.dart';
-import 'package:lan2pam/Widget/Button.dart';
-
-import '../Widget/ListWines1.dart';
-import '../Widget/ListWines2.dart';
+import '../../Prezetantion/Search.dart';
+import 'Button.dart';
+import 'ListWines1.dart';
+import 'ListWines2.dart';
+import 'WidgetLab.dart';
 
 
 class Home extends StatefulWidget {

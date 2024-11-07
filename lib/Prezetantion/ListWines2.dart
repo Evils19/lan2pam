@@ -1,41 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:convert'; // Importă dart:convert pentru JSON
-import 'package:flutter/services.dart' as rootBundle; // Importă pentru a citi fișiere
+import '../Data/Wines.dart';
+import '../Domain/Controller.dart'; // Importă modelul Wine
 
-class Wine {
-  final String name;    // Numele vinului
-  final String type;    // Tipul vinului
-  final String country; // Țara de origine
-  final String photo;   // URL-ul sau calea către imaginea vinului
-  final bool available; // Disponibilitate
-  final double price;   // Prețul
-  final int stock;      // Stocul
-  final int criticScore; // Scorul criticilor
-
-  Wine({
-    required this.name,
-    required this.type,
-    required this.country,
-    required this.photo,
-    required this.available,
-    required this.price,
-    required this.stock,
-    required this.criticScore,
-  });
-
-  factory Wine.fromJson(Map<String, dynamic> json) {
-    return Wine(
-      name: json['name'],
-      type: json['type'],
-      country: json['country'],
-      photo: json['photo'],
-      available: json['available'],
-      price: json['price'].toDouble(),
-      stock: json['stock'],
-      criticScore: json['criticScore'],
-    );
-  }
-}
 
 class VerticalWineList extends StatefulWidget {
   @override
@@ -52,11 +18,9 @@ class _VerticalWineListState extends State<VerticalWineList> {
   }
 
   Future<void> loadWines() async {
-    // Citește fișierul JSON
-    final String response = await rootBundle.rootBundle.loadString('Data/wines.json');
-    final List<dynamic> data = json.decode(response); // Decodifică JSON-ul
+    final loadedWines = await WineLoader.loadWines(); // Folosim WineLoader pentru a încărca vinurile
     setState(() {
-      wines = data.map((json) => Wine.fromJson(json)).toList(); // Deserializare
+      wines = loadedWines;
     });
   }
 
@@ -65,14 +29,14 @@ class _VerticalWineListState extends State<VerticalWineList> {
     return SizedBox(
       height: 300, // Înălțimea fiecărui card
       child: ListView.builder(
-        scrollDirection: Axis.vertical, // Orizontală
+        scrollDirection: Axis.vertical, // Vertical
         itemCount: wines.length,
         itemBuilder: (context, index) {
           final wine = wines[index];
           return Container(
             padding: EdgeInsets.only(top: 20, left: 5, right: 5),
             child: Container(
-              width: 350, // Adjust width as needed
+              width: 350,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
@@ -81,22 +45,20 @@ class _VerticalWineListState extends State<VerticalWineList> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Image on the left side
                   Container(
-                    width: 100, // Adjust image width as needed
-                    height: 150, // Adjust image height as needed
+                    width: 100,
+                    height: 150,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.network(
                         wine.photo,
                         errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
-                          return Icon(Icons.error); // Afișează o pictogramă de eroare în caz de problemă
+                          return Icon(Icons.error);
                         },
-                      ), // Aici wine.photo trebuie să fie calea către fișierul din assets
+                      ),
                     ),
                   ),
-                  SizedBox(width: 16), // Space between image and text
-                  // Text content on the right side
+                  SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +70,7 @@ class _VerticalWineListState extends State<VerticalWineList> {
                             color: !wine.available ? Colors.red[100] : Colors.green[100],
                           ),
                           child: Text(
-                            !wine.available ? "Unavaliable" : "Available",
+                            !wine.available ? "Unavailable" : "Available",
                             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: !wine.available ? Colors.red : Colors.green),
                           ),
                         ),
@@ -143,7 +105,7 @@ class _VerticalWineListState extends State<VerticalWineList> {
                         ),
                         SizedBox(height: 16),
                         Text(
-                          '₹ ${wine.price.toStringAsFixed(2)}', // Formatează prețul
+                          '₹ ${wine.price.toStringAsFixed(2)}',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
