@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class ButtonWines extends StatefulWidget {
   final String typeWine; // Declari tipul vinului
   bool isActive = false;
@@ -13,7 +11,7 @@ class ButtonWines extends StatefulWidget {
 }
 
 class _ButtonWinesState extends State<ButtonWines> {
-   // Inițializăm ca inactiv
+  // Inițializăm ca inactiv
   late Color status;
   late Color? btnFon;
 
